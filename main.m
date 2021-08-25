@@ -3,7 +3,7 @@ clc
 close all
 
 propConst = 4;
-timeStep = 0.1;
+timeStep = 0.01;
 %% Scenario I
 s1.missileInit = [0 0;...
                   0 1500];
@@ -69,13 +69,20 @@ s5.endTime = 15;
     figure('Name', 'Scenario I - True Proportional')
 
     subplot(2,1,1)
-    plot(s1.true.missileData.pos(:,1), s1.true.missileData.pos(:,2),'DisplayName','Missile')
+    plot(s1.true.missileData.pos(:,1), s1.true.missileData.pos(:,2))
     hold on
-    plot(s1.targetData.pos(:,1), s1.targetData.pos(:,2),'DisplayName','Target')
+    plot(s1.targetData.pos(:,1), s1.targetData.pos(:,2))
+    
+    plot(s1.true.missileData.pos(1,1), s1.true.missileData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
+    plot(s1.targetData.pos(1,1), s1.targetData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
     title('XY Position')
     xlabel('X (m)')
     ylabel('Y (m)')
-    legend('Location','Best')
+    legend({'Missile','Target','',''},'Location','Best')
 
     subplot(2,1,2)
     plot(s1.true.distanceData.t, s1.true.distanceData.overTime)
@@ -87,13 +94,20 @@ s5.endTime = 15;
     figure('Name', 'Scenario I - Pure Proportional')
 
     subplot(2,1,1)
-    plot(s1.pure.missileData.pos(:,1), s1.pure.missileData.pos(:,2),'DisplayName','Missile')
+    plot(s1.pure.missileData.pos(:,1), s1.pure.missileData.pos(:,2))
     hold on
-    plot(s1.targetData.pos(:,1), s1.targetData.pos(:,2),'DisplayName','Target')
+    plot(s1.targetData.pos(:,1), s1.targetData.pos(:,2))
+    
+    plot(s1.pure.missileData.pos(1,1), s1.pure.missileData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
+    plot(s1.targetData.pos(1,1), s1.targetData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
     title('XY Position')
     xlabel('X (m)')
     ylabel('Y (m)')
-    legend('Location','Best')
+    legend({'Missile','Target','',''},'Location','Best')
 
     subplot(2,1,2)
     plot(s1.pure.distanceData.t, s1.pure.distanceData.overTime)
@@ -107,13 +121,20 @@ s5.endTime = 15;
     figure('Name', 'Scenario II - True Proportional')
 
     subplot(2,1,1)
-    plot(s2.true.missileData.pos(:,1), s2.true.missileData.pos(:,2),'DisplayName','Missile')
+    plot(s2.true.missileData.pos(:,1), s2.true.missileData.pos(:,2))
     hold on
-    plot(s2.targetData.pos(:,1), s2.targetData.pos(:,2),'DisplayName','Target')
+    plot(s2.targetData.pos(:,1), s2.targetData.pos(:,2))
+    
+    plot(s2.true.missileData.pos(1,1), s2.true.missileData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
+    plot(s2.targetData.pos(1,1), s2.targetData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])    
+    
     title('XY Position')
     xlabel('X (m)')
     ylabel('Y (m)')
-    legend('Location','Best')
+    legend({'Missile','Target','',''},'Location','Best')
 
     subplot(2,1,2)
     plot(s2.true.distanceData.t, s2.true.distanceData.overTime)
@@ -125,13 +146,20 @@ s5.endTime = 15;
     figure('Name', 'Scenario II - Pure Proportional')
 
     subplot(2,1,1)
-    plot(s2.pure.missileData.pos(:,1), s2.pure.missileData.pos(:,2),'DisplayName','Missile')
+    plot(s2.pure.missileData.pos(:,1), s2.pure.missileData.pos(:,2))
     hold on
-    plot(s2.targetData.pos(:,1), s2.targetData.pos(:,2),'DisplayName','Target')
+    plot(s2.targetData.pos(:,1), s2.targetData.pos(:,2))
+    
+    plot(s2.pure.missileData.pos(1,1), s2.pure.missileData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
+    plot(s2.targetData.pos(1,1), s2.targetData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
     title('XY Position')
     xlabel('X (m)')
     ylabel('Y (m)')
-    legend('Location','Best')
+    legend({'Missile','Target','',''},'Location','Best')
 
     subplot(2,1,2)
     plot(s2.pure.distanceData.t, s2.pure.distanceData.overTime)
@@ -145,13 +173,20 @@ s5.endTime = 15;
     figure('Name', 'Scenario III - True Proportional')
 
     subplot(2,1,1)
-    plot(s3.true.missileData.pos(:,1), s3.true.missileData.pos(:,2),'DisplayName','Missile')
+    plot(s3.true.missileData.pos(:,1), s3.true.missileData.pos(:,2))
     hold on
-    plot(s3.targetData.pos(:,1), s3.targetData.pos(:,2),'DisplayName','Target')
+    plot(s3.targetData.pos(:,1), s3.targetData.pos(:,2))
+    
+    plot(s3.true.missileData.pos(1,1), s3.true.missileData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
+    plot(s3.targetData.pos(1,1), s3.targetData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])    
+    
     title('XY Position')
     xlabel('X (m)')
     ylabel('Y (m)')
-    legend('Location','Best')
+    legend({'Missile','Target','',''},'Location','Best')    
 
     subplot(2,1,2)
     plot(s3.true.distanceData.t, s3.true.distanceData.overTime)
@@ -163,13 +198,20 @@ s5.endTime = 15;
     figure('Name', 'Scenario III - Pure Proportional')
 
     subplot(2,1,1)
-    plot(s3.pure.missileData.pos(:,1), s3.pure.missileData.pos(:,2),'DisplayName','Missile')
+    plot(s3.pure.missileData.pos(:,1), s3.pure.missileData.pos(:,2))
     hold on
-    plot(s3.targetData.pos(:,1), s3.targetData.pos(:,2),'DisplayName','Target')
+    plot(s3.targetData.pos(:,1), s3.targetData.pos(:,2))
+    
+    plot(s3.pure.missileData.pos(1,1), s3.pure.missileData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
+    plot(s3.targetData.pos(1,1), s3.targetData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
     title('XY Position')
     xlabel('X (m)')
     ylabel('Y (m)')
-    legend('Location','Best')
+    legend({'Missile','Target','',''},'Location','Best')    
 
     subplot(2,1,2)
     plot(s3.pure.distanceData.t, s3.pure.distanceData.overTime)
@@ -183,13 +225,20 @@ s5.endTime = 15;
     figure('Name', 'Scenario IV - True Proportional')
 
     subplot(2,1,1)
-    plot(s4.true.missileData.pos(:,1), s4.true.missileData.pos(:,2),'DisplayName','Missile')
+    plot(s4.true.missileData.pos(:,1), s4.true.missileData.pos(:,2))
     hold on
-    plot(s4.targetData.pos(:,1), s4.targetData.pos(:,2),'DisplayName','Target')
+    plot(s4.targetData.pos(:,1), s4.targetData.pos(:,2))
+    
+    plot(s4.true.missileData.pos(1,1), s4.true.missileData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
+    plot(s4.targetData.pos(1,1), s4.targetData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])    
+    
     title('XY Position')
     xlabel('X (m)')
     ylabel('Y (m)')
-    legend('Location','Best')
+    legend({'Missile','Target','',''},'Location','Best') 
 
     subplot(2,1,2)
     plot(s4.true.distanceData.t, s4.true.distanceData.overTime)
@@ -201,13 +250,20 @@ s5.endTime = 15;
     figure('Name', 'Scenario IV - Pure Proportional')
 
     subplot(2,1,1)
-    plot(s4.pure.missileData.pos(:,1), s4.pure.missileData.pos(:,2),'DisplayName','Missile')
+    plot(s4.pure.missileData.pos(:,1), s4.pure.missileData.pos(:,2))
     hold on
-    plot(s4.targetData.pos(:,1), s4.targetData.pos(:,2),'DisplayName','Target')
+    plot(s4.targetData.pos(:,1), s4.targetData.pos(:,2))
+
+    plot(s4.pure.missileData.pos(1,1), s4.pure.missileData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
+    plot(s4.targetData.pos(1,1), s4.targetData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
     title('XY Position')
     xlabel('X (m)')
     ylabel('Y (m)')
-    legend('Location','Best')
+    legend({'Missile','Target','',''},'Location','Best')      
 
     subplot(2,1,2)
     plot(s4.pure.distanceData.t, s4.pure.distanceData.overTime)
@@ -221,13 +277,20 @@ s5.endTime = 15;
     figure('Name', 'Scenario V - True Proportional')
 
     subplot(2,1,1)
-    plot(s5.true.missileData.pos(:,1), s5.true.missileData.pos(:,2),'DisplayName','Missile')
+    plot(s5.true.missileData.pos(:,1), s5.true.missileData.pos(:,2))
     hold on
-    plot(s5.targetData.pos(:,1), s5.targetData.pos(:,2),'DisplayName','Target')
+    plot(s5.targetData.pos(:,1), s5.targetData.pos(:,2))
+    
+    plot(s5.true.missileData.pos(1,1), s5.true.missileData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
+    plot(s5.targetData.pos(1,1), s5.targetData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])    
+    
     title('XY Position')
     xlabel('X (m)')
     ylabel('Y (m)')
-    legend('Location','Best')
+    legend({'Missile','Target','',''},'Location','Best')     
 
     subplot(2,1,2)
     plot(s5.true.distanceData.t, s5.true.distanceData.overTime)
@@ -239,21 +302,23 @@ s5.endTime = 15;
     figure('Name', 'Scenario V - Pure Proportional')
 
     subplot(2,1,1)
-    plot(s5.pure.missileData.pos(:,1), s5.pure.missileData.pos(:,2),'DisplayName','Missile')
+    plot(s5.pure.missileData.pos(:,1), s5.pure.missileData.pos(:,2))
     hold on
-    plot(s5.targetData.pos(:,1), s5.targetData.pos(:,2),'DisplayName','Target')
+    plot(s5.targetData.pos(:,1), s5.targetData.pos(:,2))
+
+    plot(s5.pure.missileData.pos(1,1), s5.pure.missileData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
+    plot(s5.targetData.pos(1,1), s5.targetData.pos(1,2),'o','MarkerSize',6,...
+        'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
+    
     title('XY Position')
     xlabel('X (m)')
     ylabel('Y (m)')
-    legend('Location','Best')
+    legend({'Missile','Target','',''},'Location','Best')       
 
     subplot(2,1,2)
     plot(s5.pure.distanceData.t, s5.pure.distanceData.overTime)
     title('Distance Between Target and Missile over Time')
     ylabel('Distance (m)')
-    xlabel('Time (s)')    
-   
-
-
-
-
+    xlabel('Time (s)')

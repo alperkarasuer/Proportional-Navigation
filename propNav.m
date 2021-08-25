@@ -1,5 +1,5 @@
 function [missileData, targetData, distanceData]  = propNav(missileInit, targetInit, propConst, stepSize, endTime, isTrue)
-    t = (0:stepSize:endTime)';
+    t = transpose((0:stepSize:endTime));
     
     target.pos(1,:) = targetInit(1,:);
     target.vel(1,:) = targetInit(2,:);
