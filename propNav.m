@@ -1,5 +1,5 @@
-function [missileData, targetData, distanceData]  = proportionalNavigation(missileInit, targetInit, propConst, stepSize, isTrue)
-    t = (0:stepSize:40)';
+function [missileData, targetData, distanceData]  = propNav(missileInit, targetInit, propConst, stepSize, endTime, isTrue)
+    t = (0:stepSize:endTime)';
     
     target.pos(1,:) = targetInit(1,:);
     target.vel(1,:) = targetInit(2,:);
@@ -37,6 +37,8 @@ function [missileData, targetData, distanceData]  = proportionalNavigation(missi
     
     missileData = missile;
     targetData = target;
+    distance.t = t;
+    
     distanceData = distance;
 
     function lDot = lambdaDot(pred, prey, i)
