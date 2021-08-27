@@ -65,14 +65,16 @@ s5.endTime = 15;
     [s5.true.missileData, s5.targetData, s5.true.distanceData] = propNav(s5.missileInit, s5.targetInit, propConst, timeStep, s5.endTime, 1);
     [s5.pure.missileData, ~, s5.pure.distanceData] = propNav(s5.missileInit, s5.targetInit, propConst, timeStep, s5.endTime, 0);
 %% Plotting
-    % Scenario I True
+% Scenario I True
     figure('Name', 'Scenario I - True Proportional')
-
+    
+    % XY Position plots
     subplot(2,1,1)
-    plot(s1.true.missileData.pos(:,1), s1.true.missileData.pos(:,2))
+    plot(s1.true.missileData.pos(:,1), s1.true.missileData.pos(:,2)) 
     hold on
     plot(s1.targetData.pos(:,1), s1.targetData.pos(:,2))
     
+    % Show initial points
     plot(s1.true.missileData.pos(1,1), s1.true.missileData.pos(1,2),'o','MarkerSize',6,...
         'MarkerEdgeColor','red','MarkerFaceColor',[1 0 0])
     
@@ -83,14 +85,15 @@ s5.endTime = 15;
     xlabel('X (m)')
     ylabel('Y (m)')
     legend({'Missile','Target','',''},'Location','Best')
-
+    
+    % Distance Plot
     subplot(2,1,2)
     plot(s1.true.distanceData.t, s1.true.distanceData.overTime)
     title('Distance Between Target and Missile over Time')
     ylabel('Distance (m)')
     xlabel('Time (s)')
 
-    % Scenario I Pure
+% Scenario I Pure
     figure('Name', 'Scenario I - Pure Proportional')
 
     subplot(2,1,1)
@@ -117,7 +120,7 @@ s5.endTime = 15;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    % Scenario II True
+% Scenario II True
     figure('Name', 'Scenario II - True Proportional')
 
     subplot(2,1,1)
@@ -142,7 +145,7 @@ s5.endTime = 15;
     ylabel('Distance (m)')
     xlabel('Time (s)')
 
-    % Scenario II Pure
+% Scenario II Pure
     figure('Name', 'Scenario II - Pure Proportional')
 
     subplot(2,1,1)
@@ -169,7 +172,7 @@ s5.endTime = 15;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    % Scenario III True
+% Scenario III True
     figure('Name', 'Scenario III - True Proportional')
 
     subplot(2,1,1)
@@ -194,7 +197,7 @@ s5.endTime = 15;
     ylabel('Distance (m)')
     xlabel('Time (s)')
 
-    % Scenario III Pure
+% Scenario III Pure
     figure('Name', 'Scenario III - Pure Proportional')
 
     subplot(2,1,1)
@@ -221,7 +224,7 @@ s5.endTime = 15;
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    % Scenario IV True
+% Scenario IV True
     figure('Name', 'Scenario IV - True Proportional')
 
     subplot(2,1,1)
@@ -246,7 +249,7 @@ s5.endTime = 15;
     ylabel('Distance (m)')
     xlabel('Time (s)')
 
-    % Scenario IV Pure
+% Scenario IV Pure
     figure('Name', 'Scenario IV - Pure Proportional')
 
     subplot(2,1,1)
@@ -273,7 +276,7 @@ s5.endTime = 15;
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    % Scenario V True
+% Scenario V True
     figure('Name', 'Scenario V - True Proportional')
 
     subplot(2,1,1)
@@ -298,7 +301,7 @@ s5.endTime = 15;
     ylabel('Distance (m)')
     xlabel('Time (s)')
 
-    % Scenario V Pure
+% Scenario V Pure
     figure('Name', 'Scenario V - Pure Proportional')
 
     subplot(2,1,1)
